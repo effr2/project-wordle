@@ -11,10 +11,11 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
+  const [results, setResults] = React.useState([]);
   return (
     <div>
-      <GuessResults></GuessResults>
-      <GuessInput></GuessInput>
+      <GuessResults resultList={results}></GuessResults>
+      <GuessInput resultList={results} setResultList={setResults}></GuessInput>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuessInput() {
+function GuessInput({ resultList, setResultList }) {
   const [guessInput, setGuessInput] = React.useState("");
   return (
     <div>
@@ -9,6 +9,12 @@ function GuessInput() {
         onSubmit={(event) => {
           event.preventDefault();
           console.log(guessInput);
+
+          const nextResultList = [...resultList];
+          const nextResult = { result: guessInput, id: crypto.randomUUID() };
+          nextResultList.push(nextResult);
+
+          setResultList(nextResultList);
           setGuessInput("");
         }}
       >

@@ -1,10 +1,16 @@
 import React from "react";
 
-function GuessResults() {
+function GuessResults({ resultList }) {
+  console.log(resultList);
   return (
     <div className="guess-results">
-      <p class="guess">FIRST</p>
-      <p class="guess">GUESS</p>
+      {resultList.map(({ result, id }) => {
+        return (
+          <p key={id} className="guess">
+            {result}
+          </p>
+        );
+      })}
     </div>
   );
 }
