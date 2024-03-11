@@ -11,7 +11,7 @@ function GuessInput({ guesses, setGuesses }) {
           console.log(guessInput);
 
           const nextGuesses = [...guesses];
-          const nextGuess = { guess: guessInput, id: crypto.randomUUID() };
+          const nextGuess = { input: guessInput, id: crypto.randomUUID() };
           nextGuesses.push(nextGuess);
           setGuesses(nextGuesses);
 
