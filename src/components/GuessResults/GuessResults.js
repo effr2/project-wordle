@@ -3,15 +3,14 @@ import Guess from "../Guess/Guess";
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 import { range } from "../../utils";
 
-function GuessResults({ resultList }) {
+function GuessResults({ answer, resultList }) {
   console.log(resultList);
   return (
     <div className="guess-results">
       {range(NUM_OF_GUESSES_ALLOWED).map((num) => {
-        const guess = resultList[num];
-        return guess ? (
-          <Guess key={guess.id} guess={guess.input}></Guess>
-        ) : undefined;
+        return (
+          <Guess key={num} value={resultList[num]} answer={answer}></Guess>
+        );
       })}
     </div>
   );
