@@ -3,7 +3,6 @@ import { range } from "../../utils.js";
 import { checkGuess } from "../../game-helpers.js";
 
 function Guess({ answer, value }) {
-console.log(value);
   const result = checkGuess(value, answer);
 
   function Cell({ letter, status }) {
