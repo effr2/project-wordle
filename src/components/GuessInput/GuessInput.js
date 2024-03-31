@@ -8,7 +8,7 @@ function GuessInput({ handleSubmitGuess, gameStatus }) {
         className="guess-input-wrapper"
         onSubmit={(event) => {
           event.preventDefault();
-          console.log(guessInput);
+          //console.log(guessInput);
 
           const nextGuess = guessInput;
 
